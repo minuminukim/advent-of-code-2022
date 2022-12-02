@@ -83,3 +83,51 @@ const [winPointsLeft, winPointsRight] = lines.reduce(
 const leftTotal = left + winPointsLeft;
 const rightTotal = right + winPointsRight;
 // console.log({ rightTotal }); // 13682
+
+// problem2
+let sum = 0;
+for (const [l, r] of lines) {
+  switch (r) {
+    // lose
+    case 'X':
+      switch (l) {
+        case 'A':
+          sum += 0 + 3;
+          break;
+        case 'B':
+          sum += 0 + 1;
+          break;
+        case 'C':
+          sum += 0 + 2;
+          break;
+      }
+      break;
+    case 'Y':
+      switch (l) {
+        case 'A':
+          sum += 3 + 1;
+          break;
+        case 'B':
+          sum += 3 + 2;
+          break;
+        case 'C':
+          sum += 3 + 3;
+          break;
+      }
+      break;
+    case 'Z':
+      switch (l) {
+        case 'A':
+          sum += 6 + 2;
+          break;
+        case 'B':
+          sum += 6 + 3;
+          break;
+        case 'C':
+          sum += 6 + 1;
+          break;
+      }
+      break;
+  }
+}
+console.log({ sum }); // 12881
